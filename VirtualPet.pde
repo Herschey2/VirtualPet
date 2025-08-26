@@ -1,7 +1,6 @@
 void setup() {
   size(500, 500);
   rectMode(CORNERS);
-  smooth(4);
 }
 
 void draw() {
