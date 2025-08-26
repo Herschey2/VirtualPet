@@ -1,6 +1,5 @@
 void setup() {
   size(500, 500);
-  hint(ENABLE_STROKE_PURE);
   rectMode(CORNERS);
 }
 
