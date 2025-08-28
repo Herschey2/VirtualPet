@@ -226,8 +226,6 @@ void cloud(int x, int y, int r, int g, int b, int rotate){
   noFill();
   stroke(r, g, b, 75);
   shapeMode(CENTER);
-  pushMatrix();
-  translate(width / 2, height / 2);
   rotate(rotate);
   ellipse(x, y, 10, 10);
   curveTightness(0);
@@ -251,6 +249,5 @@ void cloud(int x, int y, int r, int g, int b, int rotate){
   curveVertex(x,y-20);
   curveVertex(x,y-20);  
   endShape();
-  popMatrix();
   stroke(0,0,0);
 }
