@@ -1,9 +1,23 @@
 void setup() {
   size(500, 500);
   rectMode(CORNERS);
+  strokeWeight(4);
+  background(92, 228, 234);
+  for (int i = 0; i < 50; i++) {
+    int x = int(random(500));
+    int y = int(random(500));
+    int r = int(random(256));
+    int g = int(random(256));
+    int b = int(random(256));
+    int rotate = int(random(600));
+    cloud(x,y, r, g, b, rotate);
+  }
 }
-
 void draw() {
+  fill(240,232,174);
+  strokeWeight(2);
+  rect(-5,330,505,505);
+  strokeWeight(4);
   eyeStalk(300,120, 350, 300);
   eyeStalk(400,120, 390, 300);
   fill(240, 174, 235);
@@ -34,6 +48,7 @@ void draw() {
   endShape();
     //back spiral
   fill(247, 67, 17);
+  noStroke();
   beginShape();
   curveVertex(175, 320);
   curveVertex(175, 320);
@@ -65,6 +80,53 @@ void draw() {
   curveVertex(210, 330);
   curveVertex(210, 330);
   endShape();
+  //shell dots
+  fill(73, 86, 165);
+  beginShape();
+  curveVertex(95, 195);
+  curveVertex(95, 195);
+  curveVertex(85, 175);
+  curveVertex(100, 155);
+  curveVertex(110, 185);
+  curveVertex(94, 195);
+  curveVertex(94, 195);
+  endShape();
+  beginShape();
+  curveVertex(110, 135);
+  curveVertex(110, 135);
+  curveVertex(105, 110);
+  curveVertex(125, 105);
+  curveVertex(125, 135);
+  curveVertex(110, 135);
+  curveVertex(110, 135);
+  endShape();
+  beginShape();
+  curveVertex(145, 90);
+  curveVertex(145, 90);
+  curveVertex(170, 60);
+  curveVertex(190, 85);
+  curveVertex(165, 100);
+  curveVertex(145, 90);
+  curveVertex(145, 90);
+  endShape();
+  beginShape();
+  curveVertex(210, 120);
+  curveVertex(210, 120);
+  curveVertex(240, 135);
+  curveVertex(230, 175);
+  curveVertex(200, 145);
+  curveVertex(210, 120);
+  curveVertex(210, 120);
+  endShape();
+  beginShape();
+  curveVertex(235, 205);
+  curveVertex(250, 225);
+  curveVertex(235, 250);
+  curveVertex(220, 230);
+  curveVertex(235, 205);
+  curveVertex(235, 205);
+  endShape();
+  stroke(0);
   // bottom
   fill(72, 222, 177);
   beginShape();
@@ -136,8 +198,7 @@ void draw() {
   eye(400,100);
 }
 void mouseClicked() {
-  println(mouseX, mouseY);
-  
+  println(mouseX, mouseY);  
 }
 
 void eye(int x, int y) {
@@ -163,4 +224,36 @@ void eyeStalk(int x,int y, int a, int b) {
   curveVertex(x+10,y);
   curveVertex(x+10,y);
   endShape();
+}
+void cloud(int x, int y, int r, int g, int b, int rotate){
+  noFill();
+  stroke(r, g, b, 75);
+  shapeMode(CENTER);
+  pushMatrix();
+  translate(width / 2, height / 2);
+  rotate(rotate);
+  ellipse(x, y, 10, 10);
+  curveTightness(0);
+  beginShape();
+  curveVertex(x,y-20);
+  curveVertex(x,y-20);
+  curveVertex(x+25,y-30);
+  curveVertex(x+30,y-20);
+  curveVertex(x+15,y);
+  curveVertex(x+30,y+20);
+  curveVertex(x+20,y+30);
+  curveVertex(x+5,y+10);
+  curveVertex(x-5,y+40);
+  curveVertex(x-15,y+40);
+  curveVertex(x-10,y+10);
+  curveVertex(x-50,y);
+  curveVertex(x-50,y-10);
+  curveVertex(x-10,y-10);
+  curveVertex(x-20,y-40);
+  curveVertex(x-10,y-40);
+  curveVertex(x,y-20);
+  curveVertex(x,y-20);  
+  endShape();
+  popMatrix();
+  stroke(0,0,0);
 }
