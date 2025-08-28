@@ -197,9 +197,6 @@ void draw() {
   eye(300,100);
   eye(400,100);
 }
-void mouseClicked() {
-  println(mouseX, mouseY);  
-}
 
 void eye(int x, int y) {
   strokeWeight(4);
