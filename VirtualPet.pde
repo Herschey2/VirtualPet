@@ -10,7 +10,7 @@ void setup() {
     int g = int(random(256));
     int b = int(random(256));
     int rotate = int(random(600));
-    cloud(x,y, r, g, b, rotate);
+    cloud(x,y, r, g, b);
   }
 }
 void draw() {
@@ -222,11 +222,10 @@ void eyeStalk(int x,int y, int a, int b) {
   curveVertex(x+10,y);
   endShape();
 }
-void cloud(int x, int y, int r, int g, int b, int rotate){
+void cloud(int x, int y, int r, int g, int b){
   noFill();
   stroke(r, g, b, 75);
   shapeMode(CENTER);
-  rotate(rotate);
   ellipse(x, y, 10, 10);
   curveTightness(0);
   beginShape();
