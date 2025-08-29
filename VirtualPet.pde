@@ -9,7 +9,6 @@ void setup() {
     int r = int(random(256));
     int g = int(random(256));
     int b = int(random(256));
-    int rotate = int(random(600));
     cloud(x,y, r, g, b);
   }
 }
