@@ -3,7 +3,7 @@ void setup() {
   rectMode(CORNERS);
   strokeWeight(4);
   background(92, 228, 234);
-  for (int i = 0; i < 50; i++) {
+  for (int i = 0; i < 20; i++) {
     int x = int(random(500));
     int y = int(random(500));
     int r = int(random(256));
